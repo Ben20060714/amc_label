@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.addEventListener('click', function() {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', navMenu.classList.contains('active'));
         });
 
         // 🔗 Ferme le menu automatiquement quand on clique sur un lien
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.addEventListener('click', function() {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             });
         });
 
@@ -39,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isClickInsideNav && !isClickInsideHamburger && navMenu.classList.contains('active')) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
             }
         });
     }
@@ -73,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //    'album-1': {
 //        nom: 'Sponsor officiel',
 //        artiste: 'Muzuba beats',
-//        image: 'Assets/Images/album1.jpg',  // ADMIN: Changez cette image
+//        image: 'Assets/Images/album1.svg',  // ADMIN: Changez cette image
 //        titres: [
 //            { titre: 'Amapiano Beat', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
 //            { titre: 'Amapiano Beat (Remix)', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
@@ -85,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //    'album-2': {
 //        nom: 'Moko na nkalanga',
 //        artiste: 'Mufti miji',
-//        image: 'Assets/Images/album2.jpg',  // ADMIN: Changez cette image
+//        image: 'Assets/Images/album2.svg',  // ADMIN: Changez cette image
 //        titres: [
 //            { titre: 'Ouverture Mélodique', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
 //            { titre: 'Danse Traditionnelle', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
@@ -98,10 +101,10 @@ document.addEventListener('DOMContentLoaded', function() {
 //    'album-3': {
 //        nom: 'Golo',
 //        artiste: 'Zamba',
-//        image: 'Assets/Images/album3.jpg',  // ADMIN: Changez cette image
+//        image: 'Assets/Images/album3.svg',  // ADMIN: Changez cette image
 //        titres: [
 //            { titre: 'Call of the night (OP2)', fichier: 'Assets/Musics/Call_of_the_Night_Season_2_Opening___Creepy_Nuts_-_Mirage__Official_Instrumental_(128k).mp3', duree: '2:38' },
-//            { titre: 'In da club', fichier: 'Assets/Musics/50_cent_in_da_club_karaoke_version_mp3_15345.mp3', duree: '3:23' },
+//            { titre: 'Amapiano — Démo AMC', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
 //            { titre: 'Titre 3', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' },
 //            { titre: 'Titre 4', fichier: 'Assets/Musics/Amapiano(128k).mp3', duree: '2:47' }
 //        ]
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //        name: 'Mr. Baron',
 //        profileImage: 'Assets/Images/Mrbaron0.jpg',
 //        genres: 'Rap • Gospel',
-//        bio: 'Lorem ipsum dolor si amet adipiscing consectetur.',
+//        bio: 'Artiste gospel et urbain du label AMC.',
 //        albums: ['album-1'],
 //        totalTracks: 5,
 //        followers: '10K',
@@ -143,9 +146,9 @@ document.addEventListener('DOMContentLoaded', function() {
 //    },
 //    'artist-2': {
 //        name: 'Mr. Objectif',
-//        profileImage: 'Assets/Images/Mrobjectif.jpg',
+//        profileImage: 'Assets/Images/Mrobjectif.JPG',
 //        genres: 'Rap • Gospel',
-//        bio: 'Lorem ipsum dolor si amet adipiscing consectetur.',
+//        bio: 'Artiste gospel et urbain du label AMC.',
 //        albums: ['album-2'],
 //        totalTracks: 6,
 //        followers: '8K',
@@ -168,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
 //    },
 //    'artist-4': {
 //        name: 'Artiste 4',
-//        profileImage: 'Assets/Images/artist4.jpg',
+//        profileImage: 'Assets/Images/artist6.jpg',
 //        genres: 'Généraliste',
 //        bio: 'Artiste talentueux avec une discographie variée.',
 //        albums: ['album-4'],
@@ -598,7 +601,7 @@ class MusicPlayer {
                             return `
                                 <div class="artist-album-block">
                                     <div class="artist-album-header">
-                                        <img src="${album.image || 'Assets/Images/album1.jpg'}" alt="${album.nom}">
+                                        <img src="${album.image || 'Assets/Images/album1.svg'}" alt="${album.nom}">
                                         <div>
                                             <h4>${album.nom}</h4>
                                             <p class="muted">${album.titres.length} titres</p>
@@ -800,7 +803,8 @@ class MusicPlayer {
 // ========================================
 // Crée une instance globale du lecteur audio (window.player)
 // Accessible partout sur le site pour les opérations de lecture
-window.player = new MusicPlayer();
+// Le lecteur actif est AMCMusicPlayer (Howler.js), initialisé par les pages
+// Artistes et Musique. L'ancien lecteur n'est pas instancié en parallèle.
 
 // ========================================
 // 📰 SYSTÈME D'ACTUALITÉS & PERSISTENCE
@@ -882,7 +886,7 @@ function publishNewsFromTrack(track, album) {
         date: dateStr, // Date formatée en français
         title: `${track.titre} — ${album.nom}`, // Titre avec chanson et album
         excerpt: `${album.artiste} publie un nouveau titre : ${track.titre}. Écoutez-le maintenant sur notre lecteur.`,
-        image: album.image || 'Assets/Images/Album3.jpg', // Image de l'album
+        image: album.image || 'Assets/Images/album3.svg', // Image de l'album
         link: '#' // Lien (peut être modifié)
     };
 
@@ -960,6 +964,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Charger et afficher les actualités persistées (sauvegardées précédemment)
     loadPersistedNews();
+    document.querySelectorAll('[data-current-year]').forEach(element => {
+        element.textContent = new Date().getFullYear();
+    });
 });
 
 // ========================================

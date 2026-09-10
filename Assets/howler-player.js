@@ -70,7 +70,7 @@ class AMCMusicPlayer {
             <div class="amc-player">
                 <!-- 🖼️ Section Image de l'Album & Visualiseur -->
                 <div class="player-artwork">
-                    <img class="player-image" src="Assets/Images/album1.jpg" alt="Album Art">
+                    <img class="player-image" src="Assets/Images/album1.svg" alt="Illustration de l'album">
                     <!-- Barres du visualiseur (animées pendant la lecture) -->
                     <div class="player-visualizer">
                         <div class="visualizer-bar"></div>
@@ -100,23 +100,23 @@ class AMCMusicPlayer {
                 <!-- 🎮 Contrôles Principaux (Play, Pause, Suivant, etc.) -->
                 <div class="player-controls">
                     <!-- Mode Shuffle (lecture aléatoire) -->
-                    <button class="player-btn shuffle-btn" title="Mélanger la lecture">
+                    <button type="button" class="player-btn shuffle-btn" title="Mélanger la lecture" aria-label="Mélanger la lecture">
                         <i class="fas fa-random"></i>
                     </button>
                     <!-- Chanson Précédente -->
-                    <button class="player-btn prev-btn" title="Chanson précédente">
+                    <button type="button" class="player-btn prev-btn" title="Chanson précédente" aria-label="Chanson précédente">
                         <i class="fas fa-step-backward"></i>
                     </button>
                     <!-- Play / Pause -->
-                    <button class="player-btn play-btn" title="Lecture / Pause">
+                    <button type="button" class="player-btn play-btn" title="Lecture / Pause" aria-label="Lecture ou pause">
                         <i class="fas fa-play"></i>
                     </button>
                     <!-- Chanson Suivante -->
-                    <button class="player-btn next-btn" title="Chanson suivante">
+                    <button type="button" class="player-btn next-btn" title="Chanson suivante" aria-label="Chanson suivante">
                         <i class="fas fa-step-forward"></i>
                     </button>
                     <!-- Mode Répétition (none, all, one) -->
-                    <button class="player-btn repeat-btn" title="Mode répétition">
+                    <button type="button" class="player-btn repeat-btn" title="Mode répétition" aria-label="Mode répétition">
                         <i class="fas fa-redo"></i>
                     </button>
                 </div>
@@ -167,6 +167,14 @@ class AMCMusicPlayer {
                 this.playTrack(index); // Jouer la chanson cliquée
             }
         });
+
+        this.container.addEventListener('keydown', (e) => {
+            const item = e.target.closest('.playlist-item');
+            if (item && (e.key === 'Enter' || e.key === ' ')) {
+                e.preventDefault();
+                this.playTrack(parseInt(item.dataset.index));
+            }
+        });
     }
 
     /**
@@ -182,6 +190,9 @@ class AMCMusicPlayer {
         this.playlistData.forEach((track, index) => {
             const item = document.createElement('div');
             item.className = 'playlist-item';
+            item.setAttribute('role', 'button');
+            item.setAttribute('tabindex', '0');
+            item.setAttribute('aria-label', `Écouter ${track.titre}`);
             item.dataset.index = index; // Stocker l'index pour retrouver la chanson
             item.innerHTML = `
                 <span class="playlist-item-number">${index + 1}</span>
@@ -235,6 +246,18 @@ class AMCMusicPlayer {
             },
             onload: () => {
                 this.updateDuration(); // Mettre à jour la durée totale
+            },
+            onloaderror: (id, error) => {
+                this.isPlaying = false;
+                this.updateUI();
+                console.error('Erreur de chargement audio:', error, track.fichier);
+                this.showPlaybackError('Ce titre est momentanément indisponible.');
+            },
+            onplayerror: (id, error) => {
+                this.isPlaying = false;
+                this.updateUI();
+                console.error('Erreur de lecture audio:', error);
+                this.showPlaybackError('La lecture n’a pas pu démarrer.');
             }
         });
 
@@ -368,6 +391,17 @@ class AMCMusicPlayer {
         totalTimeEl.textContent = this.formatTime(duration);
     }
 
+    showPlaybackError(message) {
+        if (!this.container) return;
+        let error = this.container.querySelector('.player-error');
+        if (!error) {
+            error = document.createElement('p');
+            error.className = 'player-error';
+            this.container.querySelector('.amc-player')?.prepend(error);
+        }
+        error.textContent = message;
+    }
+
     updateCurrentTrack() {
         const track = this.playlistData[this.currentSoundIndex];
         const titleEl = this.container.querySelector('.player-title');
@@ -422,9 +456,9 @@ class AMCMusicPlayer {
         const progressFill = this.container.querySelector('.player-progress-fill');
         const currentTimeEl = this.container.querySelector('.current-time');
 
-        progressSlider.value = percent; // Position du slider
-        progressFill.style.width = percent + '%'; // Barre remplie
-        currentTimeEl.textContent = this.formatTime(seek); // Temps formaté
+        if (progressSlider) progressSlider.value = percent; // Position du slider
+        if (progressFill) progressFill.style.width = percent + '%'; // Barre remplie
+        if (currentTimeEl) currentTimeEl.textContent = this.formatTime(seek); // Temps formaté
 
         // 🎨 Animer le visualiseur
         this.animateVisualizer();

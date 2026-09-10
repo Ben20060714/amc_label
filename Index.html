@@ -20,10 +20,10 @@
                 <a href="Index.html" class="active">Accueil</a>
                 <a href="Artistes.html">Artistes</a>
                 <a href="Musique.html">Musique</a>
-                <a href="Contact.html" target="_blank">Contact</a>
+                <a href="Contact.html">Contact</a>
                 <!--a href="Inscription.html" class="btn-signup">S'inscrire</a-->
             </nav>
-            <button class="hamburger" id="hamburger">
+            <button type="button" class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-controls="navMenu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -45,13 +45,65 @@
             </div>
         </section>
 
-        <!-- Artistes Section
+        <section class="home-intro" aria-labelledby="intro-title">
+            <div class="section-heading">
+                <p class="eyebrow">Le son AMC</p>
+                <h2 id="intro-title">Une maison pour les voix qui inspirent</h2>
+                <p>AMC accompagne des artistes gospel et urbains en mettant leur créativité, leur message et leur identité au premier plan.</p>
+            </div>
+            <div class="home-highlights">
+                <article class="highlight-card">
+                    <span class="highlight-icon" aria-hidden="true">♫</span>
+                    <h3>Des artistes authentiques</h3>
+                    <p>Découvrez des univers singuliers et des talents en pleine évolution.</p>
+                </article>
+                <article class="highlight-card">
+                    <span class="highlight-icon" aria-hidden="true">▶</span>
+                    <h3>Une musique à écouter</h3>
+                    <p>Retrouvez nos titres et playlists dans un lecteur simple et accessible.</p>
+                </article>
+                <article class="highlight-card">
+                    <span class="highlight-icon" aria-hidden="true">✦</span>
+                    <h3>Une vision positive</h3>
+                    <p>Nous créons un espace où la foi, le travail et la passion se rencontrent.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="featured-artists" aria-labelledby="featured-title">
+            <div class="section-heading section-heading-inline">
+                <div>
+                    <p class="eyebrow">À découvrir</p>
+                    <h2 id="featured-title">Nos artistes</h2>
+                </div>
+                <a class="text-link" href="Artistes.html">Voir tous les artistes →</a>
+            </div>
+            <div class="featured-grid">
+                <a class="featured-artist" href="Artistes.html">
+                    <img src="Assets/Images/Mrbaron0.jpg" alt="Mr. Baron">
+                    <span>Mr. Baron</span>
+                    <small>Rap • Gospel</small>
+                </a>
+                <a class="featured-artist" href="Artistes.html">
+                    <img src="Assets/Images/Mrobjectif.JPG" alt="Mr. Objectif">
+                    <span>Mr. Objectif</span>
+                    <small>Rap • Gospel</small>
+                </a>
+                <a class="featured-artist" href="Artistes.html">
+                    <img src="Assets/Images/Mackline0.jpg" alt="Mackline">
+                    <span>Mackline</span>
+                    <small>Rap • Gospel</small>
+                </a>
+            </div>
+        </section>
+
+        <!--
         <section class="artists-section">
             <h2>Nos Artistes</h2>
             <div class="artists-grid">
                 <div class="artist-card">
                     <div class="artist-image">
-                        <img src="Assets/Images/artist1.jpg" alt="Artiste 1">
+                        <img src="Assets/Images/Mrbaron0.jpg" alt="Mr. Baron">
                     </div>
                     <h3>Muzuba beats</h3>
                     <p class="genre">Pop • Électronique</p>
@@ -59,7 +111,7 @@
                 </div>
                 <div class="artist-card">
                     <div class="artist-image">
-                        <img src="Assets/Images/artist2.jpg" alt="Artiste 2">
+                        <img src="Assets/Images/Mrobjectif.JPG" alt="Mr. Objectif">
                     </div>
                     <h3>Mufti miji</h3>
                     <p class="genre">Rap • Hip-Hop</p>
@@ -67,7 +119,7 @@
                 </div>
                 <div class="artist-card">
                     <div class="artist-image">
-                        <img src="Assets/Images/artist3.jpg" alt="Artiste 3">
+                        <img src="Assets/Images/Mackline0.jpg" alt="Mackline">
                     </div>
                     <h3>Marco le maître des 4 éléments</h3>
                     <p class="genre">Indie • Rock</p>
@@ -99,7 +151,7 @@
                     <a href="#" class="read-more">Lire plus →</a>
                 </article>
             </div>
-        </section-->
+        </section>-->
         
         <div class="presentation">
             <div class="">
@@ -108,17 +160,15 @@
                         <h2>Nous sommes</h2>
                         <div class="cctv">
                             <div class="cctv-1">   
-                            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt tincidunt, nunc nisl aliquam nunc, eget aliquam nunc nisl eget nunc. Fusce nec nunc nec nunc tincidunt tincidunt. Curabitur tempus, lorem nec tincidunt gravida, justo nulla facilisis sapien, nec laoreet sapien sapien nec sapien.<br>
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer non velit nec sapien bibendum varius. Nullam rhoncus, velit a facilisis dictum, sapien justo cursus magna, ut lacinia lorem nulla nec nulla. Etiam nec sapien ut magna vehicula fermentum. Suspendisse potenti. Cras in felis euismod, tincidunt lorem a, bibendum arcu.</P>
+                            <p>AMC est un label musical dédié aux artistes qui veulent partager un message fort. Nous développons des projets gospel et urbains avec exigence, bienveillance et ambition.</p>
                         </div>
                             <!--div>
-                                <img src="Assets/Images/2kip2.jpg" alt="Equipe AMC" class="presentation-image2" style="width: 100%;">
-                                <!--img src="Assets/Images/2kip.jpg" alt="Equipe AMC" class="presentation-image">
+                                <img src="Assets/Images/heroAMC.jpg" alt="Équipe AMC" class="presentation-image2" style="width: 100%;">
+                                <!--img src="Assets/Images/heroAMC.jpg" alt="Équipe AMC" class="presentation-image">
                             </div-->
                         </div>
                         <div class="cctv-2">    
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt tincidunt, nunc nisl aliquam nunc, eget aliquam nunc nisl eget nunc. Fusce nec nunc nec nunc tincidunt tincidunt. Curabitur tempus, lorem nec tincidunt gravida, justo nulla facilisis sapien, nec laoreet sapien sapien nec sapien.<br>
-                            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer non velit nec sapien bibendum varius. Nullam rhoncus, velit a facilisis dictum, sapien justo cursus magna, ut lacinia lorem nulla nec nulla. Etiam nec sapien ut magna vehicula fermentum. Suspendisse potenti. Cras in felis euismod, tincidunt lorem a, bibendum arcu.</p>
+                            <p>Notre mission est de faire émerger des voix authentiques et de rendre leur musique accessible à tous. Écoutez nos artistes et contactez-nous pour construire le prochain projet.</p>
                         </div>
                     </div>
                     
@@ -129,19 +179,19 @@
         <section class="streaming-section">
             <h2>Écoutez sur vos plateformes préférées</h2>
             <div class="streaming-platforms">
-                <a href="#" class="platform-link">
+                <a href="https://open.spotify.com/" class="platform-link" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-spotify"></i>
                     <span>Spotify</span>
                 </a>
-                <a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" class="platform-link" target="_blank">
+                <a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" class="platform-link" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-instagram"></i>
                     <span>Instagram</span>
                 </a>
-                <a href="#" class="platform-link">
+                <a href="https://www.youtube.com/" class="platform-link" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-youtube"></i>
                     <span>YouTube</span>
                 </a>
-                <a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" class="platform-link" target="_blank">
+                <a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" class="platform-link" target="_blank" rel="noopener noreferrer">
                     <i class="fab fa-tiktok"></i>
                     <span>TikTok</span>
                 </a>
@@ -169,13 +219,13 @@
                 <ul>
                     <li><a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" target="_blank">TikTok</a></li>
                     <li><a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" target="_blank">Instagram</a></li>
-                    <li><a href="#">Spotify</a></li>
-                    <li><a href="#">YouTube</a></li>
+                    <li><a href="https://open.spotify.com/" target="_blank" rel="noopener noreferrer">Spotify</a></li>
+                    <li><a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">YouTube</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 AMC. Tous droits réservés.</p>
+            <p>&copy; <span data-current-year>2026</span> AMC. Tous droits réservés.</p>
         </div>
     </footer>
     <script src="Assets/Scripts.js"></script>

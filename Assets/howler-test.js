@@ -26,7 +26,7 @@ console.log('\n=== Test Fichiers Musicaux ===');
 const filesNeeded = [
     'Assets/Musics/Amapiano(128k).mp3',
     'Assets/Musics/Call_of_the_Night_Season_2_Opening___Creepy_Nuts_-_Mirage__Official_Instrumental_(128k).mp3',
-    'Assets/Musics/50_cent_in_da_club_karaoke_version_mp3_15345.mp3',
+    'Assets/Musics/Amapiano(128k).mp3',
     'Assets/Musics/Brooklyn_Duo_-_A_Thousand_Years_[WEDDING_VERSION](128k).mp3'
 ];
 

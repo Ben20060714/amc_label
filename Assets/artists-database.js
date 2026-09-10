@@ -33,7 +33,7 @@ const AMC_ARTISTS_DB = {
         name: 'Mr. Baron', // Nom d'affichage
         profileImage: 'Assets/Images/Mrbaron0.jpg', // Photo de profil
         genres: 'Rap • Gospel', // Genres musicaux
-        bio: 'Lorem ipsum dolor sit amet, adipiscing consectetur commodo net.',
+        bio: 'Producteur et artiste gospel, Mr. Baron développe une identité musicale énergique entre rap et amapiano.',
 //        stats: {
 //            albums: 1, // Nombre d'albums
 //            tracks: 5, // Nombre de chansons
@@ -51,14 +51,14 @@ const AMC_ARTISTS_DB = {
             {
                 titre: 'Amapiano Beat (Remix)',
                 artiste: 'Mr. Baron',
-                fichier: 'Assets/Musics/_Switch_OTR_X_Russ_Millions_X_UK_Drill_Type_Beat_-__VOCAL____UK_Drill_.m4a',
+                fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '2:47',
                 image: 'Assets/Images/Mrbaron0.jpg'
             },
             {
                 titre: 'Amapiano Beat (Extended)',
                 artiste: 'Mr. Baron',
-                fichier: 'Assets/Musics/don_omar_danza_kuduro_instrumental_original_hq_mp3_61760.mp3',
+                fichier: 'Assets/Musics/Call_of_the_Night_Season_2_Opening___Creepy_Nuts_-_Mirage__Official_Instrumental_(128k).mp3',
                 duree: '2:47',
                 image: 'Assets/Images/Mrbaron0.jpg'
             },
@@ -105,7 +105,7 @@ const AMC_ARTISTS_DB = {
             {
                 titre: 'Objectif 026',
                 artiste: 'Mr. Objectif',
-                fichier: 'Assets/Musics/don_omar_danza_kuduro_instrumental_original_hq_mp3_61760.mp3',
+                fichier: 'Assets/Musics/Call_of_the_Night_Season_2_Opening___Creepy_Nuts_-_Mirage__Official_Instrumental_(128k).mp3',
                 duree: '2:47',
                 image: 'Assets/Images/Mrobjectif.JPG'
             },
@@ -163,7 +163,7 @@ const AMC_ARTISTS_DB = {
             {
                 titre: 'In da club',
                 artiste: 'Mackline',
-                fichier: 'Assets/Musics/50_cent_in_da_club_karaoke_version_mp3_15345.mp3',
+                fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '3:23',
                 image: 'Assets/Images/Mackline0.jpg'
             },
@@ -188,7 +188,7 @@ const AMC_ARTISTS_DB = {
     'aaron-asemba': {
         id: 'aaron-asemba',
         name: 'Aaron Asemba',
-        profileImage: 'Assets/Images/artist4.jpg',
+        profileImage: 'Assets/Images/artist6.jpg',
         genres: 'Rap • Gospel',
         bio: 'Artiste talentueux avec une discographie variée et des collaborations internationales.',
 //        stats: {
@@ -202,35 +202,35 @@ const AMC_ARTISTS_DB = {
                 artiste: 'Aaron Asemba',
                 fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '2:47',
-                image: 'Assets/Images/artist4.jpg'
+                image: 'Assets/Images/artist6.jpg'
             },
             {
                 titre: 'A thousand years',
                 artiste: 'Aaron Asemba',
                 fichier: 'Assets/Musics/Brooklyn_Duo_-_A_Thousand_Years_[WEDDING_VERSION](128k).mp3',
                 duree: '5:00',
-                image: 'Assets/Images/artist4.jpg'
+                image: 'Assets/Images/artist6.jpg'
             },
             {
                 titre: 'Track 3',
                 artiste: 'Aaron Asemba',
                 fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '2:47',
-                image: 'Assets/Images/artist4.jpg'
+                image: 'Assets/Images/artist6.jpg'
             },
             {
                 titre: 'Track 4',
                 artiste: 'Aaron Asemba',
                 fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '2:47',
-                image: 'Assets/Images/artist4.jpg'
+                image: 'Assets/Images/artist6.jpg'
             },
             {
                 titre: 'Track 5',
                 artiste: 'Aaron Asemba',
                 fichier: 'Assets/Musics/Amapiano(128k).mp3',
                 duree: '2:47',
-                image: 'Assets/Images/artist4.jpg'
+                image: 'Assets/Images/artist6.jpg'
             }
         ]
     },
@@ -488,6 +488,27 @@ const AMC_ARTISTS_DB = {
         ]
     }
 };
+
+// Les fichiers réellement distribués par le projet sont la source de vérité.
+// On évite ainsi d'afficher plusieurs faux titres pour le même fichier audio.
+const AMC_AUDIO_METADATA = {
+    'Assets/Musics/Amapiano(128k).mp3': { titre: 'Amapiano — Démo AMC', duree: '2:47' },
+    'Assets/Musics/Call_of_the_Night_Season_2_Opening___Creepy_Nuts_-_Mirage__Official_Instrumental_(128k).mp3': { titre: 'Mirage — Instrumental', duree: '2:38' },
+    'Assets/Musics/Brooklyn_Duo_-_A_Thousand_Years_[WEDDING_VERSION](128k).mp3': { titre: 'A Thousand Years', duree: '5:00' }
+};
+
+Object.values(AMC_ARTISTS_DB).forEach(artist => {
+    const uniqueTracks = new Map();
+    artist.playlist.forEach(track => {
+        const metadata = AMC_AUDIO_METADATA[track.fichier];
+        if (!metadata || uniqueTracks.has(track.fichier)) return;
+        uniqueTracks.set(track.fichier, {
+            ...track,
+            ...metadata
+        });
+    });
+    artist.playlist = [...uniqueTracks.values()];
+});
 
 // ========================================
 // 🔧 FONCTIONS UTILITAIRES DE LA BASE DE DONNÉES
