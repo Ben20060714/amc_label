@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <linearGradient id="news1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7b00ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff006e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="300" fill="url(#news1)"/>
+  <circle cx="150" cy="150" r="80" fill="#ffffff" opacity="0.2"/>
+  <text x="300" y="160" font-size="28" text-anchor="middle" fill="#ffffff" font-weight="bold">Actualité</text>
+</svg>

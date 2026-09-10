@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <defs>
+    <linearGradient id="album2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff006e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00d4ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#album2)"/>
+  <rect x="100" y="100" width="200" height="200" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.2"/>
+  <text x="200" y="210" font-size="32" text-anchor="middle" fill="#ffffff" font-weight="bold">Album</text>
+</svg>

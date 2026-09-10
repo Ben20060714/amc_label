@@ -1,0 +1,5 @@
+howler.js-master/
+.next/
+dist/
+node_modules/
+.env

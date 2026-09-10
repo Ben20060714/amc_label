@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Écoutez la meilleure musique du label AMC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Images/AMC.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Howler.js Music Player -->
+    <link rel="stylesheet" href="Assets/howler-player.css">
+    <link rel="stylesheet" href="Assets/Styles.css">
+    <title>Musique - AMC</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="Assets/Images/AMC.svg" alt="AMC Logo">
+                <span>AMC</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="Index.html">Accueil</a>
+                <a href="Artistes.html">Artistes</a>
+                <a href="Musique.html" class="active">Musique</a>
+                <a href="Contact.html">Contact</a>
+                <!--a href="Inscription.html" class="btn-signup">S'inscrire</a-->
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Notre Musique</h1>
+            <p>Les meilleurs titres du label AMC</p>
+            <div class="artistes-search-bar" role="search">
+                <input type="text" class="ArtistesSearch" id="ArtistesSearch" placeholder="Rechercher un titre ou une playlist.." aria-label="Rechercher un service">
+            </div>
+        </section>
+
+        <section class="music-section">
+            <h2>Albums Populaires</h2>
+            <div class="albums-grid">
+                <div class="album-card">
+                    <div class="album-image">
+                        <img src="Assets/Images/KEDY0701.JPG" alt="Album 1">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Lorem ipsum</h3>
+                    <p class="artist-name">Dolor sit</p>
+                    <p class="album-date">2025</p>
+                </div>
+                <div class="album-card">
+                    <div class="album-image">
+                        <img src="Assets/Images/IMG-20251201-WA0069.jpg" alt="Album 2">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Lorem ipsum</h3>
+                    <p class="artist-name">Dolor sit</p>
+                    <p class="album-date">2023</p>
+                </div>
+                <div class="album-card">
+                    <div class="album-image">
+                        <img src="Assets/Images/IMG_E9203.jpg" alt="Album 3">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Lorem ipsum</h3>
+                    <p class="artist-name">dolor sit</p>
+                    <p class="album-date">2024</p>
+                </div>
+                <!--div class="album-card">
+                    <div class="album-image">
+                        <img src="Assets/Images/album4.jpg" alt="Album 4">
+                        <div class="play-button">▶</div>
+                    </div>
+                    <h3>Lorem ipsum</h3>
+                    <p class="artist-name">dolor sit amet</p>
+                    <p class="album-date">2024</p>
+                </div>
+            </div-->
+        </section>
+
+        <section class="playlist-section">
+            <h2>Playlists Populaires</h2>
+            <div class="playlists-grid">
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="Assets/Images/album1.svg" alt="Playlist 1">
+                    </div>
+                    <h3>Best of AMC</h3>
+                    <p>45 titres • 3 heures 20 minutes</p>
+                </div>
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="Assets/Images/album2.svg" alt="Playlist 2">
+                    </div>
+                    <h3>Découvertes</h3>
+                    <p>32 titres • 2 heures 15 minutes</p>
+                </div>
+                <div class="playlist-card">
+                    <div class="playlist-image">
+                        <img src="Assets/Images/album3.svg" alt="Playlist 3">
+                    </div>
+                    <h3>Nouveautés</h3>
+                    <p>28 titres • 1 heure 50 minutes</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Albums et Playlists Interactifs -->
+        <section class="music-interactive">
+            <h2 style="text-align: center; margin: 3rem 0 1rem 0;">Jouez un album ou une playlist</h2>
+            <p style="color: var(--text-secondary); text-align: center; margin-bottom: 2rem;">
+                Cliquez sur un album pour écouter tous les titres
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anitcheed Music Christ</h4>
+                <p>Votre destination pour la musique Gospel.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="Index.html">Accueil</a></li>
+                    <li><a href="Artistes.html">Artistes</a></li>
+                    <li><a href="Musique.html">Musique</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Retrouvez-nous sur</h4>
+                <ul>
+                    <li><a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" target="_blank">Instagram</a></li>
+                    <li><a href="#">Spotify</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AMC. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ========== HOWLER.JS - Lecteur Audio Moderne ========== -->
+    <script src="Assets/howler.js-master/howler.js-master/dist/howler.js"></script>
+    <script src="Assets/artists-database.js"></script>
+    <script src="Assets/howler-advanced-config.js"></script>
+    <script src="Assets/howler-player.js"></script>
+    <!-- ===================================================== -->
+
+    <script>
+        let musicPagePlayer = null;
+        let isPlayerModalOpen = false;
+
+        function openPlayerModal(playlistData, playlistTitle) {
+            if (!playlistData || playlistData.length === 0) {
+                alert('Aucune chanson trouvée');
+                return;
+            }
+
+            // Créer la modal
+            let modal = document.getElementById('music-player-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'music-player-modal';
+                modal.className = 'music-player-modal';
+                document.body.appendChild(modal);
+            }
+
+            modal.innerHTML = `
+                <div class="music-player-modal-content">
+                    <button class="modal-close-btn" onclick="closePlayerModal()">✕</button>
+                    <h2 class="modal-title">${playlistTitle || 'Lecteur Musique'}</h2>
+                    <div id="amc-music-player-container"></div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+            isPlayerModalOpen = true;
+
+            // Initialiser le lecteur dans la modal
+            musicPagePlayer = new AMCMusicPlayer('amc-music-player-container', playlistData);
+        }
+
+        function closePlayerModal() {
+            const modal = document.getElementById('music-player-modal');
+            if (modal) {
+                modal.style.display = 'none';
+                isPlayerModalOpen = false;
+                if (musicPagePlayer && musicPagePlayer.currentSound) {
+                    musicPagePlayer.currentSound.stop();
+                }
+            }
+        }
+
+        // Fermer la modal quand on clique en dehors
+        document.addEventListener('click', function(event) {
+            const modal = document.getElementById('music-player-modal');
+            if (modal && event.target === modal) {
+                closePlayerModal();
+            }
+        });
+
+        // Fermer la modal avec Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && isPlayerModalOpen) {
+                closePlayerModal();
+            }
+        });
+
+        // Ajouter des écouteurs aux cartes d'album au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            const albumCards = document.querySelectorAll('.album-card');
+            albumCards.forEach((card, index) => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function() {
+                    const title = card.querySelector('h3').textContent;
+                    const artist = card.querySelector('.artist-name').textContent;
+                    
+                    // Déterminer l'artiste ID basé sur l'index
+                    const artistIds = ['mr-baron', 'mr-objectif', 'mackline', 'aaron-asemba'];
+                    const artistId = artistIds[index] || 'mr-baron';
+                    
+                    const playlistData = getArtistPlaylist(artistId);
+                    openPlayerModal(playlistData, `${title} - ${artist}`);
+                });
+            });
+
+            const playlistCards = document.querySelectorAll('.playlist-card');
+            playlistCards.forEach((card, index) => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', function() {
+                    const title = card.querySelector('h3').textContent;
+                    
+                    // Créer une playlist mixte de tous les artistes
+                    const allTracks = [];
+                    const artists = getAllArtists();
+                    artists.forEach(artist => {
+                        allTracks.push(...artist.playlist);
+                    });
+
+                    openPlayerModal(allTracks, title);
+                });
+            });
+        });
+    </script>
+
+    <script src="Assets/Scripts.js"></script>
+</body>
+</html>

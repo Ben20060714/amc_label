@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Découvrez tous les artistes du label AMC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Images/AMC.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Howler.js Music Player -->
+    <link rel="stylesheet" href="Assets/howler-player.css">
+    <link rel="stylesheet" href="Assets/Styles.css">
+    <title>Nos Artistes - AMC</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="Assets/Images/AMC.svg" alt="AMC Logo">
+                <span>AMC</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="Index.html">Accueil</a>
+                <a href="Artistes.html" class="active">Artistes</a>
+                <a href="Musique.html">Musique</a>
+                <a href="Contact.html">Contact</a>
+                <!--a href="Inscription.html" class="btn-signup">S'inscrire</a-->
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Nos Artistes</h1>
+            <p>Rencontrez les talents exceptionnels du label AMC</p>
+            <div class="artistes-search-bar" role="search">
+                <input type="text" class="ArtistesSearch" id="ArtistesSearch" placeholder="Rechercher un artiste..." aria-label="Rechercher un service">
+            </div>
+        </section>
+
+        <section class="artists-section">
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/Mrbaron0.jpg" alt="Mr Baron">
+                        </div>
+                        <h3>Mr. Baron</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Producteur de beats amapiano de qualité professionnelle avec une signature sonore unique.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('mr-baron')">Écouter</button>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/Mrobjectif.JPG" alt="Mr Objectif">
+                        </div>
+                        <h3>Mr. Objectif</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Artiste spécialisé dans la musique traditionnelle avec des touches modernes et contemporaines.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('mr-objectif')">Écouter</button>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/Mackline0.jpg" alt="Mackline">
+                        </div>
+                        <h3>Mackline</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Artiste polyvalent proposant différents styles musicaux adaptés à tous les goûts.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('mackline')">Écouter</button>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/artist4.jpg" alt="Artiste 4">
+                        </div>
+                        <h3>Aaron Asemba</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Artiste talentueux avec une discographie variée et des collaborations internationales.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('aaron-asemba')">Écouter</button>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/artist5.jpg" alt="Artiste 5">
+                        </div>
+                        <h3>Big Demm</h3>
+                        <p class="genre">Dub • Reggae</p>
+                    </div>
+                    <p class="artist-bio">Spécialiste des sonorités reggae et dub avec des influences rhythmiques authentiques.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('big-demm')">Écouter</button>
+                </div>
+
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/artist6.jpg" alt="Artiste 6">
+                        </div>
+                        <h3>Fred S.</h3>
+                        <p class="genre">Jazz • Fondu</p>
+                    </div>
+                    <p class="artist-bio">Musicien virtuose explorant les horizons du jazz contemporain et de la fusion musicale.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('fred-s')">Écouter</button>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/Zehiiickey2.8-0.jpg" alt="Zehiiickey2.8">
+                        </div>
+                        <h3>Zehiiickey2.8</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Musicien virtuose explorant les horizons du jazz contemporain et de la fusion musicale.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('zehiiickey')">Écouter</button>
+                </div>
+                <div class="artist-card">
+                    <div class="artist-card-header">
+                        <div class="artist-image">
+                            <img src="Assets/Images/Miradel Bady0.jpg" alt="Miradel Bady">
+                        </div>
+                        <h3>Miradel Bady</h3>
+                        <p class="genre">Rap • Gospel</p>
+                    </div>
+                    <p class="artist-bio">Musicien virtuose explorant les horizons du jazz contemporain et de la fusion musicale.</p>
+                    <!--div class="artist-stats">
+                        <div>
+                            <strong>1</strong>
+                            <p>Album</p>
+                        </div>
+                        <div>
+                            <strong>6</strong>
+                            <p>Titres</p>
+                        </div>
+                        <div>
+                            <strong>8K</strong>
+                            <p>Abonnés</p>
+                        </div>
+                    </div-->
+                    <button class="artist-link player-btn" onclick="loadArtistPlayer('miradel-bady')">Écouter</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Player Container -->
+        <section id="player-container-artists" style="display: none; margin: 3rem 0;"></section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anitcheed Music Christ</h4>
+                <p>Votre destination pour la musique Gospel.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="Index.html">Accueil</a></li>
+                    <li><a href="Artistes.html">Artistes</a></li>
+                    <li><a href="Musique.html">Musique</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Réseaux Sociaux</h4>
+                <ul>
+                    <li><a href="#">TikTok</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Spotify</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AMC Music Label. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ========== HOWLER.JS - Lecteur Audio Moderne ========== -->
+    <script src="Assets/howler.js-master/howler.js-master/dist/howler.js"></script>
+    <script src="Assets/artists-database.js"></script>
+    <script src="Assets/howler-player.js"></script>
+    <!-- ===================================================== -->
+
+    <script>
+        let artistPlayer = null;
+
+        function loadArtistPlayer(artistId) {
+            const playlistData = getArtistPlaylist(artistId);
+            const artistData = getArtistData(artistId);
+            
+            if (!playlistData || playlistData.length === 0) {
+                alert('Aucune chanson trouvée pour cet artiste');
+                return;
+            }
+
+            const container = document.getElementById('player-container-artists');
+            container.style.display = 'block';
+            container.innerHTML = '';
+
+            // Créer un titre pour le lecteur
+            const title = document.createElement('h2');
+            title.textContent = `${artistData.name} - ${playlistData.length} titres`;
+            title.style.textAlign = 'center';
+            title.style.marginBottom = '2rem';
+            title.style.color = 'var(--text-primary)';
+            container.appendChild(title);
+
+            // Créer un conteneur pour le lecteur
+            const playerContainer = document.createElement('div');
+            playerContainer.id = 'amc-player-instance';
+            container.appendChild(playerContainer);
+
+            // Initialiser le lecteur
+            artistPlayer = new AMCMusicPlayer('amc-player-instance', playlistData);
+
+            // Scroll vers le lecteur
+            setTimeout(() => {
+                container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+    </script>
+
+    <script src="Assets/Scripts.js"></script>
+</body>
+</html>

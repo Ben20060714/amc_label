@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Contactez le label AMC">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/Images/AMC.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="Assets/Styles.css">
+    <title>Contact - AMC</title>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <img src="Assets/Images/AMC.svg" alt="AMC Logo">
+                <span>AMC</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="Index.html">Accueil</a>
+                <a href="Artistes.html">Artistes</a>
+                <a href="Musique.html">Musique</a>
+                <a href="Contact.html" class="active">Contact</a>
+                <!--a href="Inscription.html" class="btn-signup">S'inscrire</a-->
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Nous Contacter</h1>
+            <p>Nous serions ravis de vous entendre</p>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-form">
+                    <h2>Formulaire de Contact</h2>
+                    <form id="contactForm" onsubmit="sendToWhatsApp(event)">
+                        <div class="form-group">
+                            <label for="name">Nom *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numéro WhatsApp *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+243..." pattern="\+243[0-9]{9}" required title="Format: +243 suivi de 9 chiffres">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Sujet *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Envoyer</button>
+                    </form>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Informations</h2>
+                    <div class="info-item">
+                        <h4>Adresse</h4>
+                        <!--p>123 Rue de la Musique<br>75000 Paris, France</p-->
+                    </div>
+                    <div class="info-item">
+                        <h4>Téléphone</h4>
+                        <p>+243 906325304</p>
+                        <p>+243 982838811</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Email</h4>
+                        <p>anitcheedamc@gmail.com</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Horaires</h4>
+                        <p>Lundi - Dimanche<br>24H/24</p>
+                    </div>
+                    <div class="info-item">
+                        <h4>Réseaux Sociaux</h4>
+                        <div class="social-links">
+                            <a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" title="TikTok" target="_blank">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                            <a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" title="Instagram" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" title="YouTube" target="_blank">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" title="Spotify" target="_blank">
+                                <i class="fab fa-spotify"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Anitcheed Music Christ</h4>
+                <p>Votre destination pour la musique Gospel.</p>
+                <img src="Assets/Images/Ben-kail azad.svg" alt="Ben-kaïl Azad" id="logo-moi"><!--onmousemove="alert('Contactez-moi dès que possible pour un site web avancé quelconque !\n +243820433981 +243838553846')"-->
+            </div>
+            <div class="footer-section">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="Index.html">Accueil</a></li>
+                    <li><a href="Artistes.html">Artistes</a></li>
+                    <li><a href="Musique.html">Musique</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Retrouvez-nous sur</h4>
+                <ul>
+                    <li><a href="https://www.tiktok.com/@anitched_musique?_r=1&_t=ZM-92F7r83lk8O" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.instagram.com/anitch_gospel?igsh=eGhxdXBpc2h3azJw&utm_source=qr" target="_blank">Instagram</a></li>
+                    <li><a href="#">Spotify</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 AMC. Tous droits réservés.</p>
+        </div>
+    </footer>
+    <script src="Assets/Scripts.js">
+        function sendToWhatsApp(event) {
+            event.preventDefault();
+            
+            // Récupérer les valeurs du formulaire
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            // Vérifier que tous les champs sont remplis
+            if (!name || !phone || !subject || !message) {
+                alert('Veuillez remplir tous les champs');
+                return;
+            }
+            
+            // Formater le numéro (enlever les espaces et tirets)
+            const cleanPhone = phone.replace(/[\s\-]/g, '');
+            
+            // Construire le message WhatsApp
+            const whatsappMessage = `Bonjour,\n\nNom: ${name}\nNuméro: ${phone}\nSujet: ${subject}\n\nMessage:\n${message}`;
+            
+            // Encoder le message pour l'URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            
+            // Créer le lien WhatsApp (numéro cible: +243906325304)
+            const whatsappURL = `https://wa.me/243906325304?text=${encodedMessage}`;
+            
+            // Ouvrir WhatsApp
+            window.open(whatsappURL, '_blank');
+            
+            // Réinitialiser le formulaire
+            document.getElementById('contactForm').reset();
+        }
+    </script>
+</body>
+</html>

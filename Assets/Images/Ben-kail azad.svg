@@ -1,0 +1,33 @@
+<svg width="8192" height="8192" viewBox="0 0 8192 8192" xmlns="http://www.w3.org/2000/svg">
+  <!-- Définition du dégradé linéaire pour le cercle -->
+  <defs>
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff">
+        <animate attributeName="stop-color" values="#00f0ff; #ff00cc; #00ff99; #00f0ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#8a00ff">
+        <animate attributeName="stop-color" values="#8a00ff; #00ff99; #ff00cc; #8a00ff" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+
+    <linearGradient id="bioGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f9d423">
+        <animate attributeName="stop-color" values="#f9d423; #ff4e00; #ff0000ff; #f9d423" dur="4s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" stop-color="#ff4e00">
+        <animate attributeName="stop-color" values="#ff4e00; #ff0000ff; #f9d423;#ff4e00" dur="4s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+  </defs>
+
+  <text x="50%" y="50%" text-anchor="middle" dominant-baseline="central" font-size="2048" fill="url(#bioGradient)" font-family="Arial, sans-serif">☣</text>
+
+  <!-- Cercle principal du logo -->
+  <circle cx="4096" cy="4096" r="2048" fill="none" stroke="url(#techGradient)" stroke-width="120" />
+  <!-- 
+    Pour modifier :
+    - La taille du cercle : changer 'r'
+    - Les couleurs du dégradé : modifier les stop-color dans #techGradient
+    - Le contour : changer stroke et stroke-width
+  -->
+</svg>
