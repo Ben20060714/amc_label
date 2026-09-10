@@ -1,1 +1,1 @@
-# amc_label
+# AMC Officiel
